@@ -1,0 +1,51 @@
+# .gitattributes
+
+# EOL normalization (recommended: LF cross‑platform)
+* text=auto eol=lf
+
+# Exceptions for Windows environments
+*.bat text eol=crlf
+*.ps1 text eol=crlf
+
+# Shell scripts and config files
+*.sh text eol=lf
+*.env text
+*.service text
+
+# Diff drivers and linguist hints
+*.md text diff=markdown
+*.mdx text
+*.json text
+*.yml text
+*.yaml text
+*.sql text diff=sql
+*.graphql text
+
+# Lockfiles: avoid complex conflicts (prefer regenerating)
+package-lock.json merge=ours
+pnpm-lock.yaml merge=ours
+yarn.lock merge=ours
+
+# Binaries
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.gz binary
+*.tgz binary
+*.jar binary
+
+# Vendored/Generated (helps linguist stats)
+node_modules/** linguist-vendored
+vendor/** linguist-vendored
+dist/** linguist-generated
+build/** linguist-generated
+coverage/** linguist-generated
+
+# Export-ignore examples (uncomment if you use `git archive`)
+# .github/ export-ignore
+# .gitea/ export-ignore
+# scripts/ export-ignore

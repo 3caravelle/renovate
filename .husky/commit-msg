@@ -1,0 +1,9 @@
+echo "Validating commit message format..."
+npx --no-install commitlint --edit "$1"
+
+if [ $? -ne 0 ]; then
+    echo "Commit message does not comply with Conventional Commits or AI policy."
+    exit 1
+fi
+
+echo "Commit message validated successfully!"

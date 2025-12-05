@@ -1,0 +1,53 @@
+type(scope): short imperative summary
+
+Longer description explaining WHY, not just WHAT.
+Wrap at ~72 chars per line.
+
+BREAKING CHANGE:
+[if relevant, describe the breaking change and required migration]
+
+AI-Assisted: true|false
+AI-Tool: copilot|chatgpt|none
+AI-Scope: snippet|refactor|design|docs|other
+
+# -------------------------------------------------
+
+# Line 1 (required):
+
+# <type>(<scope>): <summary>
+
+# Examples:
+
+# feat(auth): add TOTP 2FA
+
+# fix(redis): handle socket timeout on reconnect
+
+# chore: bump spring boot to 3.5.1
+
+#
+
+# Allowed types:
+
+# feat|fix|perf|refactor|docs|test|build|chore|ci|style|revert
+
+#
+
+# Line 2 empty (required)
+
+#
+
+# Body (optional) for context.
+
+#
+
+# Footer:
+
+# - BREAKING CHANGE: if it breaks compatibility
+
+# - AI fields are mandatory
+
+#
+
+# AI fields are mandatory per internal policy.
+
+# -------------------------------------------------
