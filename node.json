@@ -1,0 +1,29 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "packageRules": [
+    {
+      "groupName": "Vue/Nuxt ecosystem",
+      "matchPackagePatterns": [
+        "^vue",
+        "^@vue",
+        "^nuxt",
+        "vite",
+        "vue-router",
+        "pinia"
+      ]
+    },
+    {
+      "groupName": "Lint & formatting",
+      "matchPackagePatterns": ["eslint", "prettier"]
+    },
+    {
+      "matchUpdateTypes": ["patch"],
+      "automerge": true
+    },
+    {
+      "matchUpdateTypes": ["major"],
+      "automerge": false,
+      "labels": ["major-update"]
+    }
+  ]
+}

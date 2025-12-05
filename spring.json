@@ -1,0 +1,46 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "packageRules": [
+    {
+      "groupName": "Spring Boot ecosystem",
+      "matchPackagePatterns": [
+        "^org.springframework",
+        "^org.springframework.boot",
+        "spring-boot-starter",
+        "spring-cloud",
+        "spring-security"
+      ],
+      "matchManagers": ["maven"],
+      "separateMajorMinor": true,
+      "minimumReleaseAge": "3 days"
+    },
+    {
+      "groupName": "Maven plugins",
+      "matchPackagePatterns": [
+        "maven-compiler-plugin",
+        "maven-surefire-plugin",
+        "maven-failsafe-plugin",
+        "jib-maven-plugin"
+      ],
+      "matchManagers": ["maven"]
+    },
+    {
+      // No automerge for DB driver upgrades
+      "matchPackagePatterns": [
+        "postgresql",
+        "mysql",
+        "mariadb-java-client",
+        "oracle"
+      ],
+      "automerge": false,
+      "prPriority": 5,
+      "labels": ["critical", "db-driver"]
+    },
+    {
+      // No automerge for major Java runtime
+      "matchPackagePatterns": ["^jre", "jdk"],
+      "matchUpdateTypes": ["major"],
+      "automerge": false
+    }
+  ]
+}

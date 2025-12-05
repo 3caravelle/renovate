@@ -1,0 +1,47 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "packageRules": [
+    {
+      "groupName": "Base Docker images",
+      "matchDatasources": ["docker"],
+      "matchManagers": ["dockerfile"],
+      "minimumReleaseAge": "3 days",
+      "separateMinorPatch": true
+    },
+    {
+      "groupName": "Runtime Docker images",
+      "matchDatasources": ["docker"],
+      "matchManagers": ["dockerfile"],
+      "matchPackagePatterns": [
+        "postgres",
+        "mysql",
+        "mariadb",
+        "mongo",
+        "redis",
+        "nginx",
+        "rabbitmq"
+      ],
+      "automerge": false,
+      "labels": ["infra", "docker-runtime"]
+    },
+    {
+      "groupName": "Tooling Docker images",
+      "matchDatasources": ["docker"],
+      "matchManagers": ["dockerfile"],
+      "matchPackagePatterns": ["node", "openjdk", "maven", "gradle"]
+    },
+    {
+      "matchDatasources": ["docker"],
+      "matchManagers": ["dockerfile"],
+      "matchUpdateTypes": ["patch"],
+      "automerge": true
+    },
+    {
+      "matchDatasources": ["docker"],
+      "matchManagers": ["dockerfile"],
+      "matchUpdateTypes": ["major"],
+      "automerge": false,
+      "labels": ["major-update"]
+    }
+  ]
+}
