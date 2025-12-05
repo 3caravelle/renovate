@@ -6,9 +6,15 @@ Wrap at ~72 chars per line.
 BREAKING CHANGE:
 [if relevant, describe the breaking change and required migration]
 
-AI-Assisted: true|false
-AI-Tool: copilot|chatgpt|none
+# AI section (use only one)
+AI-Assisted: true
+AI-Tool: copilot|chatgpt|other
 AI-Scope: snippet|refactor|design|docs|other
+
+# Use this section if AI was not used
+AI-Assisted: false
+AI-Tool: none
+AI-Scope: none
 
 # -------------------------------------------------
 
