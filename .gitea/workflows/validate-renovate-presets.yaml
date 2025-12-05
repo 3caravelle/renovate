@@ -1,0 +1,40 @@
+name: ci
+
+on:
+  pull_request:
+    paths:
+      - "*.json"
+      - "**/*.json"
+
+jobs:
+  validate-presets:
+    runs-on: local_runner
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+
+      - name: Lint JSON files
+        run: npx --yes --package prettier -- prettier --check "**/*.json"
+
+      - name: Validate Renovate presets
+        run: |
+          set -e
+          # Select only JSON files that declare the Renovate schema
+          files=$(grep -rl "renovate-schema.json" --include="*.json" . || true)
+
+          if [ -z "$files" ]; then
+            echo "No Renovate preset files found, nothing to validate."
+            exit 0
+          fi
+
+          echo "Validating files: $files"
+          npx --yes --package renovate -- renovate-config-validator $files
