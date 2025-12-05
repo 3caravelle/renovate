@@ -1,0 +1,9 @@
+# Gitea workflow directory
+-W .gitea/workflows
+
+# Runner mapping
+-P ubuntu-latest=catthehacker/ubuntu:act-latest
+-P local_runner=catthehacker/ubuntu:act-latest
+
+# Disable pulling images for actions/checkout and other actions
+--pull=false
