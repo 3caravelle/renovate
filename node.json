@@ -3,27 +3,45 @@
   "packageRules": [
     {
       "groupName": "Vue/Nuxt ecosystem",
+      "matchManagers": ["npm"],
       "matchPackagePatterns": [
-        "^vue",
-        "^@vue",
-        "^nuxt",
-        "vite",
-        "vue-router",
-        "pinia"
-      ]
+        "^(vue|vue-router|vue-i18n|@vue/|@vueuse/)",
+        "^(nuxt|@nuxt/)",
+        "^(pinia|@pinia/)",
+        "^(vite|@vitejs/)"
+      ],
+      "automerge": false
+    },
+    {
+      "groupName": "NestJS ecosystem",
+      "matchManagers": ["npm"],
+      "matchPackagePatterns": ["^@nestjs/"],
+      "automerge": false
+    },
+    {
+      "groupName": "TypeScript toolchain",
+      "matchManagers": ["npm"],
+      "matchPackagePatterns": [
+        "^typescript$",
+        "^tsx$",
+        "^ts-node$",
+        "^@types/",
+        "^@swc/",
+        "^swc",
+        "^ts-jest$"
+      ],
+      "automerge": false
     },
     {
       "groupName": "Lint & formatting",
-      "matchPackagePatterns": ["eslint", "prettier"]
-    },
-    {
-      "matchUpdateTypes": ["patch"],
-      "automerge": true
-    },
-    {
-      "matchUpdateTypes": ["major"],
-      "automerge": false,
-      "labels": ["major-update"]
+      "matchManagers": ["npm"],
+      "matchPackagePatterns": [
+        "^eslint",
+        "^@eslint/",
+        "^@typescript-eslint/",
+        "^prettier$"
+      ],
+      "automerge": false
     }
   ]
 }

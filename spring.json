@@ -4,43 +4,56 @@
     {
       "groupName": "Spring Boot ecosystem",
       "matchPackagePatterns": [
-        "^org.springframework",
-        "^org.springframework.boot",
-        "spring-boot-starter",
-        "spring-cloud",
-        "spring-security"
+        "^org\\.springframework:",
+        "^org\\.springframework\\.boot:",
+        "^org\\.springframework\\.cloud:",
+        "^org\\.springframework\\.security:"
       ],
       "matchManagers": ["maven"],
-      "separateMajorMinor": true,
-      "minimumReleaseAge": "3 days"
+      "minimumReleaseAge": "3 days",
+      "automerge": false,
+      "labels": ["java", "spring"]
     },
     {
       "groupName": "Maven plugins",
-      "matchPackagePatterns": [
-        "maven-compiler-plugin",
-        "maven-surefire-plugin",
-        "maven-failsafe-plugin",
-        "jib-maven-plugin"
+      "matchPackageNames": [
+        "org.apache.maven.plugins:maven-compiler-plugin",
+        "org.apache.maven.plugins:maven-surefire-plugin",
+        "org.apache.maven.plugins:maven-failsafe-plugin",
+        "com.google.cloud.tools:jib-maven-plugin"
       ],
-      "matchManagers": ["maven"]
+      "matchManagers": ["maven"],
+      "automerge": false,
+      "labels": ["java", "maven-plugin"]
     },
     {
       // No automerge for DB driver upgrades
-      "matchPackagePatterns": [
-        "postgresql",
-        "mysql",
-        "mariadb-java-client",
-        "oracle"
+      "matchManagers": ["maven"],
+      "matchPackageNames": [
+        "org.postgresql:postgresql",
+        "mysql:mysql-connector-java",
+        "com.mysql:mysql-connector-j",
+        "org.mariadb.jdbc:mariadb-java-client",
+        "com.oracle.database.jdbc:ojdbc8",
+        "com.oracle.database.jdbc:ojdbc11"
       ],
       "automerge": false,
       "prPriority": 5,
-      "labels": ["critical", "db-driver"]
+      "labels": ["java", "critical", "db-driver"]
     },
     {
-      // No automerge for major Java runtime
-      "matchPackagePatterns": ["^jre", "jdk"],
+      // Keep Spring majors clearly highlighted (no grouping, no automerge)
+      "matchManagers": ["maven"],
+      "matchPackagePatterns": [
+        "^org\\.springframework:",
+        "^org\\.springframework\\.boot:",
+        "^org\\.springframework\\.cloud:",
+        "^org\\.springframework\\.security:"
+      ],
       "matchUpdateTypes": ["major"],
-      "automerge": false
+      "automerge": false,
+      "prPriority": -1,
+      "labels": ["spring", "major-update"]
     }
   ]
 }

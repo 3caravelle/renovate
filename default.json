@@ -4,32 +4,76 @@
   "extends": ["config:best-practices"],
   // Global timezone and schedule
   "timezone": "Europe/Rome",
-  "schedule": ["before 12:00 on Monday,Tuesday,Wednesday,Thursday"],
+  // Renovate schedule strings can be picky: keep entries explicit
+  "schedule": [
+    "before 12:00 on Monday",
+    "before 12:00 on Tuesday",
+    "before 12:00 on Wednesday",
+    "before 12:00 on Thursday"
+  ],
+  // Avoid PR floods on the first run / after long inactivity
+  "prHourlyLimit": 5,
+  "prConcurrentLimit": 10,
   // Noise reduction: avoid very fresh updates
   "minimumReleaseAge": "2 days",
   // Ensure patch/minor are separated from majors
   "separateMajorMinor": true,
+  "separateMinorPatch": true,
   // Group some ecosystems and define update policies
   "packageRules": [
     {
-      "groupName": "Test & QA dependencies",
+      "groupName": "Test & QA (Node)",
+      "matchManagers": ["npm"],
       "matchPackagePatterns": [
-        "jest",
+        "^@?jest",
         "vitest",
         "mocha",
         "chai",
-        "phpunit",
-        "mockito",
-        "junit"
-      ]
+        "cypress",
+        "playwright",
+        "@testing-library",
+        "msw"
+      ],
+      "automerge": false
     },
     {
-      "groupName": "CI/CD tooling",
-      "matchPackagePatterns": ["actions/", "gha-", "semantic-release", "husky"],
-      "matchManagers": ["npm", "github-actions"]
+      "groupName": "Test & QA (Java)",
+      "matchManagers": ["maven"],
+      "matchPackagePatterns": [
+        "^org\\.junit",
+        "^junit:junit$",
+        "^org\\.mockito",
+        "^org\\.assertj",
+        "^org\\.hamcrest",
+        "^org\\.testcontainers",
+        "junit-jupiter",
+        "mockito-core",
+        "assertj-core"
+      ],
+      "automerge": false
     },
     {
-      "groupName": "Frontend tooling",
+      "groupName": "CI/CD (Actions)",
+      "matchManagers": ["github-actions"],
+      "matchPackagePatterns": ["^actions/", "^docker/", "^github/"],
+      "automerge": false
+    },
+    {
+      "groupName": "CI/CD tooling (Node)",
+      "matchManagers": ["npm"],
+      "matchPackagePatterns": [
+        "^husky$",
+        "^lint-staged$",
+        "^semantic-release$",
+        "^@commitlint/",
+        "^commitlint",
+        "^release-please"
+      ],
+      "automerge": false
+    },
+    {
+      "groupName": "Frontend tooling (Node)",
+      "matchManagers": ["npm"],
       "matchPackagePatterns": [
         "eslint",
         "prettier",
@@ -37,13 +81,27 @@
         "webpack",
         "babel"
       ],
-      "matchManagers": ["npm"]
+      "automerge": false
     },
     // Policy for patch/minor/major
     {
       "matchUpdateTypes": ["patch"],
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["devDependencies"],
       "automerge": true,
-      "automergeType": "branch"
+      "automergeType": "pr"
+    },
+    {
+      "matchUpdateTypes": ["patch"],
+      "matchManagers": ["github-actions"],
+      "automerge": true,
+      "automergeType": "pr"
+    },
+    {
+      "matchUpdateTypes": ["digest"],
+      "matchManagers": ["dockerfile"],
+      "automerge": true,
+      "automergeType": "pr"
     },
     {
       "matchUpdateTypes": ["minor"],
