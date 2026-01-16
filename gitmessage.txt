@@ -8,7 +8,7 @@ BREAKING CHANGE:
 
 # AI section (use only one)
 AI-Assisted: true
-AI-Tool: copilot|chatgpt|other
+AI-Tool: chatgpt|codex|copilot|other
 AI-Scope: snippet|refactor|design|docs|other
 
 # Use this section if AI was not used
