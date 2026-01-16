@@ -6,10 +6,10 @@
   "timezone": "Europe/Rome",
   // Renovate schedule strings can be picky: keep entries explicit
   "schedule": [
-    "before 12:00 on Monday",
-    "before 12:00 on Tuesday",
-    "before 12:00 on Wednesday",
-    "before 12:00 on Thursday"
+    "before 08:00 on Monday",
+    "before 08:00 on Tuesday",
+    "before 08:00 on Wednesday",
+    "before 08:00 on Thursday"
   ],
   // Avoid PR floods on the first run / after long inactivity
   "prHourlyLimit": 5,
@@ -112,16 +112,27 @@
       "automerge": false,
       "prPriority": -1,
       "labels": ["major-update"]
+    },
+    // OpenSSF Scorecards integration in PR bodies
+    {
+      "matchSourceUrls": ["https://github.com/**"],
+      "prBodyDefinitions": {
+        "OpenSSF": "[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/{{sourceRepo}}/badge)](https://securityscorecards.dev/viewer/?uri=github.com/{{sourceRepo}})"
+      },
+      "prBodyColumns": [
+        "Package",
+        "Type",
+        "Update",
+        "Change",
+        "Pending",
+        "OpenSSF"
+      ]
     }
   ],
-  // Security PRs prioritized
-  "vulnerabilityAlerts": {
-    "enabled": true
-  },
   // Shared lockfile maintenance
   "lockFileMaintenance": {
     "enabled": true,
-    "schedule": ["before 12:00 on Monday"],
+    "schedule": ["before 04:00 on Monday"],
     "automerge": false
   },
   // Common labels for all Renovate PRs

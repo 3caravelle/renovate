@@ -11,8 +11,7 @@
       ],
       "matchManagers": ["maven"],
       "minimumReleaseAge": "3 days",
-      "automerge": false,
-      "labels": ["java", "spring"]
+      "automerge": false
     },
     {
       "groupName": "Maven plugins",
@@ -23,8 +22,7 @@
         "com.google.cloud.tools:jib-maven-plugin"
       ],
       "matchManagers": ["maven"],
-      "automerge": false,
-      "labels": ["java", "maven-plugin"]
+      "automerge": false
     },
     {
       // No automerge for DB driver upgrades
@@ -39,7 +37,7 @@
       ],
       "automerge": false,
       "prPriority": 5,
-      "labels": ["java", "critical", "db-driver"]
+      "labels": ["critical"]
     },
     {
       // Keep Spring majors clearly highlighted (no grouping, no automerge)
@@ -53,7 +51,7 @@
       "matchUpdateTypes": ["major"],
       "automerge": false,
       "prPriority": -1,
-      "labels": ["spring", "major-update"]
+      "labels": ["major-update"]
     }
   ]
 }

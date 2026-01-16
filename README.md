@@ -24,12 +24,12 @@ Il file `default.json` definisce il comportamento comune di Renovate:
 
 - Estende la configurazione consigliata di Renovate (`config:best-practices`).
 - Imposta il fuso orario su `Europe/Rome`.
-- Limita le esecuzioni alla mattina, prima delle 12:00 da lunedì a giovedì.
+- Limita le esecuzioni alla mattina presto, prima delle 08:00 da lunedì a giovedì.
 - Evita aggiornamenti troppo “freschi” con `minimumReleaseAge: 2 days`.
 - Mantiene separati aggiornamenti major da minor/patch.
 - Definisce alcuni gruppi di dipendenze (test/QA, CI/CD, frontend tooling).
-- Abilita gli alert di sicurezza (`vulnerabilityAlerts.enabled: true`).
-- Abilita la manutenzione dei lockfile (lunedì mattina).
+- Aggiunge (per dipendenze con sorgente GitHub) un badge OpenSSF Scorecard nel corpo delle PR.
+- Abilita la manutenzione dei lockfile (lunedì prima delle 04:00).
 - Usa etichetta comune `dependencies` per tutte le PR di Renovate.
 - Abilita i semantic commits per le PR generate dal bot.
 
@@ -55,17 +55,16 @@ Preset per progetti Java basati su Spring:
   - `separateMajorMinor: true`
   - `minimumReleaseAge: 3 days`
 - Gruppo per i principali plugin Maven (compiler, surefire, failsafe, jib).
-- Disabilita l'automerge per i driver database (`postgresql`, `mysql`, ecc.) e li marca come più prioritari (`labels: ["critical", "db-driver"]`).
-- Disabilita l'automerge per aggiornamenti major della JVM (`jre`, `jdk`).
+- Disabilita l'automerge per i driver database (`postgresql`, `mysql`, ecc.) e li marca come più prioritari (`labels: ["critical"]`).
 
 ### `docker.json`
 
 Preset per immagini Docker:
 
 - Raggruppa le immagini Docker “base” con `minimumReleaseAge: 3 days` e separazione degli aggiornamenti `minor` e `patch`.
-- Crea un gruppo dedicato alle immagini runtime (ad es. `postgres`, `mysql`, `mariadb`, `mongo`, `redis`, `nginx`, `rabbitmq`), per le quali l'automerge è disabilitato e vengono applicate le label `infra` e `docker-runtime`.
+- Crea un gruppo dedicato alle immagini runtime (ad es. `postgres`, `mysql`, `mariadb`, `mongo`, `redis`, `nginx`, `rabbitmq`), per le quali l'automerge è disabilitato.
 - Crea un gruppo per le immagini di tooling (`node`, `openjdk`, `maven`, `gradle`).
-- Abilita l'automerge per gli aggiornamenti di tipo `patch` delle immagini Docker.
+- Abilita l'automerge per aggiornamenti `digest` e per `patch` delle immagini di tooling (escluse le runtime).
 - Disabilita l'automerge per gli aggiornamenti di tipo `major` e li marca con la label `major-update`.
 
 ## Come usare questi preset nei progetti

@@ -32,8 +32,7 @@
       ],
       "matchUpdateTypes": ["patch"],
       "automerge": true,
-      "automergeType": "pr",
-      "labels": ["docker-tooling"]
+      "automergeType": "pr"
     },
     {
       "groupName": "Base Docker images",
@@ -56,8 +55,7 @@
       ],
       "minimumReleaseAge": "3 days",
       "separateMinorPatch": true,
-      "automerge": false,
-      "labels": ["docker-base"]
+      "automerge": false
     },
     {
       "groupName": "Tooling Docker images",
@@ -71,8 +69,7 @@
         "maven",
         "gradle"
       ],
-      "automerge": false,
-      "labels": ["docker-tooling"]
+      "automerge": false
     },
     {
       "matchDatasources": ["docker"],
@@ -95,8 +92,7 @@
         "nginx",
         "rabbitmq"
       ],
-      "automerge": false,
-      "labels": ["infra", "docker-runtime"]
+      "automerge": false
     }
   ]
 }
