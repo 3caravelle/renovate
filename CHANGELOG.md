@@ -1,0 +1,14 @@
+# Changelog
+
+## [0.1.0](https://git.3caravelle.net/3Caravelle/renovate/compare/v0.0.1...v0.1.0) (2026-01-16)
+
+
+### Features
+
+* add configuration files for Renovate presets ([b81f75c](https://git.3caravelle.net/3Caravelle/renovate/commit/b81f75cc9f24bdf779c94dbb2e2c2be658728b91))
+* **ci:** add CI workflow to validate Renovate presets ([2c7d1be](https://git.3caravelle.net/3Caravelle/renovate/commit/2c7d1be882d909da9b5bd05e238655504d996006))
+
+
+### Bug Fixes
+
+* release-please configuration ([#9](https://git.3caravelle.net/3Caravelle/renovate/issues/9)) ([72e74bb](https://git.3caravelle.net/3Caravelle/renovate/commit/72e74bb9fcf4b20142c65366478c307e73fbd55d))
