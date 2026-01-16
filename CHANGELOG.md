@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://git.3caravelle.net/3Caravelle/renovate/compare/v0.1.0...v0.2.0) (2026-01-16)
+
+
+### Features
+
+* **ci:** enhance release-please configuration with changelog sections ([#11](https://git.3caravelle.net/3Caravelle/renovate/issues/11)) ([89c07da](https://git.3caravelle.net/3Caravelle/renovate/commit/89c07daddc0ffbea33224221140e3b4b5cec10dd))
+
 ## [0.1.0](https://git.3caravelle.net/3Caravelle/renovate/compare/v0.0.1...v0.1.0) (2026-01-16)
 
 

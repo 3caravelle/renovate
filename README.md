@@ -1,6 +1,6 @@
 [//]: # "// x-release-please-start-version"
 
-![Latest Release](https://img.shields.io/badge/latest_release-amber?style=plastic&label=0.1.0)
+![Latest Release](https://img.shields.io/badge/latest_release-amber?style=plastic&label=0.2.0)
 
 [//]: # "// x-release-please-end"
 
