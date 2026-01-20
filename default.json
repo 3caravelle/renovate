@@ -124,6 +124,10 @@
         "Type",
         "Update",
         "Change",
+        "Age",
+        "Adoption",
+        "Passing",
+        "Confidence",
         "Pending",
         "OpenSSF"
       ]
