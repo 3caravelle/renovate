@@ -75,7 +75,7 @@ All'interno del repository applicativo, crea o aggiorna il file di configurazion
 
 ```jsonc
 {
-  "extends": ["gitea>3Caravelle/renovate"],
+  "extends": ["github>3Caravelle/renovate"],
 }
 ```
 
@@ -85,7 +85,7 @@ All'interno del repository applicativo, crea o aggiorna il file di configurazion
 
 ```jsonc
 {
-  "extends": ["gitea>3Caravelle/renovate", "gitea>3Caravelle/renovate:node"],
+  "extends": ["github>3Caravelle/renovate", "github>3Caravelle/renovate:node"],
 }
 ```
 
@@ -93,7 +93,10 @@ All'interno del repository applicativo, crea o aggiorna il file di configurazion
 
 ```jsonc
 {
-  "extends": ["gitea>3Caravelle/renovate", "gitea>3Caravelle/renovate:spring"],
+  "extends": [
+    "github>3Caravelle/renovate",
+    "github>3Caravelle/renovate:spring",
+  ],
 }
 ```
 
@@ -101,7 +104,7 @@ All'interno del repository applicativo, crea o aggiorna il file di configurazion
 
 ```jsonc
 {
-  "extends": ["gitea>3Caravelle/renovate#v1.0.0"],
+  "extends": ["github>3Caravelle/renovate#v1.0.0"],
 }
 ```
 
