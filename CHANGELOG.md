@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://git.3caravelle.net/3Caravelle/renovate/compare/v0.2.0...v0.2.1) (2026-02-17)
+
+
+### Documentation
+
+* update repository references from gitea to github in examples ([#15](https://git.3caravelle.net/3Caravelle/renovate/issues/15)) ([a149991](https://git.3caravelle.net/3Caravelle/renovate/commit/a1499915b74526449685c317ab534152a7ec7f56))
+
 ## [0.2.0](https://git.3caravelle.net/3Caravelle/renovate/compare/v0.1.0...v0.2.0) (2026-01-16)
 
 
