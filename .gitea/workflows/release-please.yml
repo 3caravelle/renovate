@@ -22,7 +22,7 @@ jobs:
         id: release
         uses: 3caravelle/release-please-action@v5
         with:
-          token: ${{ secrets.RELEASE_SECRET }}
+          token: ${{ secrets.GITBOT_TOKEN }}
           github-api-url: https://git.3caravelle.net/api/v1
-          git-username: ${{ secrets.GIT_USERNAME }}
-          git-password: ${{ secrets.GIT_PASSWORD }}
+          git-username: ${{ secrets.GITBOT_USERNAME }}
+          git-password: ${{ secrets.GITBOT_PASSWORD }}
