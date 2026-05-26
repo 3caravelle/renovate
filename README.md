@@ -29,7 +29,6 @@ Il file `default.json` definisce il comportamento comune di Renovate:
 - Mantiene separati aggiornamenti major da minor/patch.
 - Definisce alcuni gruppi di dipendenze (test/QA, CI/CD, frontend tooling).
 - Aggiunge (per dipendenze con sorgente GitHub) un badge OpenSSF Scorecard nel corpo delle PR.
-- Abilita la manutenzione dei lockfile (lunedì prima delle 04:00).
 - Usa etichetta comune `dependencies` per tutte le PR di Renovate.
 - Abilita i semantic commits per le PR generate dal bot.
 
