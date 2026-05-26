@@ -135,7 +135,7 @@
   ],
   // Shared lockfile maintenance
   "lockFileMaintenance": {
-    "enabled": true,
+    "enabled": false,
     "schedule": ["before 04:00 on Monday"],
     "automerge": false
   },
