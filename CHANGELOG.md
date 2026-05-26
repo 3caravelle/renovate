@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://git.3caravelle.net/3Caravelle/renovate/compare/v0.2.1...v0.3.0) (2026-05-26)
+
+
+### Features
+
+* disable lockfile maintenance ([#34](https://git.3caravelle.net/3Caravelle/renovate/issues/34)) ([9e6b878](https://git.3caravelle.net/3Caravelle/renovate/commit/9e6b87847d5390c208067c1b35f8020d5907bc56))
+
 ## [0.2.1](https://git.3caravelle.net/3Caravelle/renovate/compare/v0.2.0...v0.2.1) (2026-02-17)
 
 
