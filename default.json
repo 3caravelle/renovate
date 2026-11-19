@@ -14,6 +14,7 @@
   // Avoid PR floods on the first run / after long inactivity
   "prHourlyLimit": 5,
   "prConcurrentLimit": 10,
+  "branchConcurrentLimit": 10,
   // Noise reduction: avoid very fresh updates
   "minimumReleaseAge": "2 days",
   // Ensure patch/minor are separated from majors
