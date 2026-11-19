@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.2](https://git.3caravelle.net/3Caravelle/renovate/compare/v0.3.1...v0.3.2) (2026-11-19)
+
+
+### Bug Fixes
+
+* set branchConcurrentLimit to avoid PRs rate limited to 2 ([#67](https://git.3caravelle.net/3Caravelle/renovate/issues/67)) ([73e558a](https://git.3caravelle.net/3Caravelle/renovate/commit/73e558a1d875dc427bd3f00a941ae1386c289fbc))
+
 ## [0.3.1](https://git.3caravelle.net/3Caravelle/renovate/compare/v0.3.0...v0.3.1) (2026-05-26)
 
 
